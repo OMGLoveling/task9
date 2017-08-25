@@ -4,13 +4,13 @@ const Teacher = require('../../main/practice-2/teacher');
 const Class = require('../../main/practice-2/class');
 
 describe("Person", () => {
-  it("should have field name and age", () => {
+  it("1 should have field name and age", () => {
     let person = new Person("Tom", 21);
     expect(person.name).toBe("Tom");
     expect(person.age).toBe(21);
   });
 
-  it("should have a method introduce, introduce person with name and age", () => {
+  it("2 should have a method introduce, introduce person with name and age", () => {
     let person = new Person("Tom", 21);
     let introduce = person.introduce();
     expect(introduce).toBe("My name is Tom. I am 21 years old.");
@@ -18,7 +18,7 @@ describe("Person", () => {
   });
 
   describe("Student", () => {
-    it("should have field name, age and class", () => {
+    it("3 should have field name, age and class", () => {
       let klass = new Class(2);
       let student = new Student("Tom", 21, klass);
       expect(student.name).toBe("Tom");
@@ -27,7 +27,7 @@ describe("Person", () => {
 
     });
 
-    it("should overwrite Person introduce, introduce student with class", () => {
+    it("4 should overwrite Person introduce, introduce student with class", () => {
       let klass = new Class(2);
       let student = new Student("Tom", 21, klass);
       let introduce = student.introduce();
@@ -36,7 +36,7 @@ describe("Person", () => {
 
     });
 
-    it("should introduce student is a leader, when class assign this student to be a leader",
+    it("5 should introduce student is a leader, when class assign this student to be a leader",
     () => {
       let klass = new Class(2);
       let student = new Student("Tom", 21, klass);
@@ -51,7 +51,7 @@ describe("Person", () => {
 
   describe("Teacher", () => {
 
-    it("should have field name, age and classes", () => {
+    it("6 should have field name, age and classes", () => {
       let klass1 = new Class(2);
       let klass2 = new Class(3);
       let teacher = new Teacher("Joun", 21, [klass1, klass2]);
@@ -60,7 +60,7 @@ describe("Person", () => {
       expect(teacher.classes).toEqual([klass1, klass2]);
     });
 
-    it("should overwrite Person introduce and show all classes this teacher teaches",
+    it("7 should overwrite Person introduce and show all classes this teacher teaches",
     () => {
       let klass1 = new Class(2);
       let klass2 = new Class(3);
@@ -72,7 +72,7 @@ describe("Person", () => {
 
     });
 
-    it("should show no class this teacher teach, when there is no class assgined to this teacher",
+    it("8 should show no class this teacher teach, when there is no class assgined to this teacher",
     () => {
       let teacher = new Teacher("Joun", 21, []);
       let introduce = teacher.introduce();
